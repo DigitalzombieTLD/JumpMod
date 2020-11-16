@@ -2,12 +2,12 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using MelonLoader;
-using FoxCompanion;
+using JumpMod;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: MelonInfo(typeof(JumpMain), "JumpMod", "0.9.0", "Digitalzombie", "")]
+[assembly: MelonInfo(typeof(JumpModMain), "JumpMod", "0.9.0", "Digitalzombie", "")]
 [assembly: MelonGame("Hinterland", "TheLongDark")]
 [assembly: AssemblyTitle("JumpMod")]
 [assembly: AssemblyDescription("Jump around")]
