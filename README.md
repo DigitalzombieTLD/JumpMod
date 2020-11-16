@@ -1,3 +1,6 @@
+WORK IN PROGRESS!!!! Release will follow soon.
+
+
 The Long Dark - JumpMod - v0.9.0 by Digitalzombie
 ===============================================================
 
