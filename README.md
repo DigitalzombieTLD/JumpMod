@@ -1,3 +1,6 @@
+WORK IN PROGRESS!!!! Release will follow soon.
+=============================
+
 The Long Dark - JumpMod - v0.9.0 by Digitalzombie
 ===============================================================
 
@@ -27,8 +30,8 @@ Main Menu -> Options -> Mod Settings -> JumpMod settings
 =============================================
 =============================================
 
-BUGS MAY BE EXPECTED!!!
-=======================
+BUGS ARE TO BE EXPECTED!!!
+===========================
 
 TLD reddit:
 https://www.reddit.com/r/thelongdark/
