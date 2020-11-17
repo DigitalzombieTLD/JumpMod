@@ -20,9 +20,7 @@ namespace JumpMod
             if (JumpModInputsMain.isJumping == true)
             {
                 if (jumpTimer <= jumpTimerEnd)
-                {
-                    //GameManager.GetHungerComponent().RemoveReserveCalories(50f);
-
+                {   
                     playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
 
                     playerVelocity.y += gravityValue * Time.deltaTime;

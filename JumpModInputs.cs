@@ -45,6 +45,7 @@ namespace JumpMod
                         if (GameManager.GetHungerComponent().GetCalorieReserves() >= 350f && GameManager.GetInventoryComponent().GetTotalWeightKG() < 30f)
                         {
                             isJumping = true;
+                            GameManager.GetHungerComponent().RemoveReserveCalories(50f);
                             JumpModActionMain.jumpTimer = 0f;
                         }
                     }
