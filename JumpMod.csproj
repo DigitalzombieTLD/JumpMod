@@ -94,7 +94,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JumpModHarmony.cs" />
+    <Compile Include="JumpModAction.cs" />
     <Compile Include="JumpModInputs.cs" />
     <Compile Include="JumpMod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

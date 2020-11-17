@@ -27,7 +27,7 @@ namespace JumpMod
         {
             if (level >= 6)
             {
-                JumpModInputsMain.controller = GameManager.GetVpFPSPlayer().Controller.m_Controller;
+                JumpModActionMain.controller = GameManager.GetVpFPSPlayer().Controller.m_Controller;
                 playerTransform = GameManager.GetPlayerTransform();
                 levelLoaded = true;
             }
@@ -42,12 +42,8 @@ namespace JumpMod
             if (levelLoaded == true)
             {
                 JumpModInputsMain.JumpModInputsUpdate();
+                JumpModActionMain.JumpModActionUpdate();
             }
-        }
-
-        public override void OnFixedUpdate()
-        {
-
         }
     }
 }

@@ -8,31 +8,47 @@ namespace JumpMod
 {
     public class JumpModInputsMain : MelonMod
     {
-        public static CharacterController controller;
-        public static Vector3 playerVelocity;
-        public static bool groundedPlayer;
-        public static float playerSpeed = 2.0f;
-        public static float jumpHeight = 1.0f;
-        public static float gravityValue = -9.81f;
+
+        public static bool isJumping = false;
 
         public static void JumpModInputsUpdate()
         {
             if (InputManager.GetKeyDown(InputManager.m_CurrentContext, Settings.GetInputKeyFromString(Settings.options.buttonJump)) && Settings.options.settingJumpEnable == true)
             {
                 MelonLogger.Log("Jump!");
-                
-                groundedPlayer = controller.isGrounded;
-                if (groundedPlayer && playerVelocity.y < 0)
+
+                if (isJumping == false && GameManager.GetVpFPSPlayer().Controller.m_Controller.isGrounded)
                 {
-                    playerVelocity.y = 0f;
+                    if (GameManager.GetInventoryComponent().GetTotalWeightKG() >= 30f)
+                    {
+                        JumpModActionMain.jumpTimerEnd = 0;
+                    }
+                    else if (GameManager.GetInventoryComponent().GetTotalWeightKG() >= 20f)
+                    {
+                        JumpModActionMain.jumpTimerEnd = 0.02f;
+                    }
+                    else if (GameManager.GetInventoryComponent().GetTotalWeightKG() >= 10f)
+                    {
+                        JumpModActionMain.jumpTimerEnd = 0.04f;
+                    }
+                    else if (GameManager.GetInventoryComponent().GetTotalWeightKG() >= 0f)
+                    {
+                        JumpModActionMain.jumpTimerEnd = 0.08f;
+                    }
+                    else
+                    {
+                        JumpModActionMain.jumpTimerEnd = 0.00f;
+                    }
+
+                    if (GameManager.GetSprainedAnkleComponent().HasSprainedAnkle() == false && GameManager.GetPlayerManagerComponent().PlayerIsCrouched() == false)
+                    {
+                        if (GameManager.GetHungerComponent().GetCalorieReserves() >= 350f && GameManager.GetInventoryComponent().GetTotalWeightKG() < 30f)
+                        {
+                            isJumping = true;
+                            JumpModActionMain.jumpTimer = 0f;
+                        }
+                    }
                 }
-
-
-                playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
-            
-
-                playerVelocity.y += gravityValue * Time.deltaTime;
-                controller.Move(playerVelocity * Time.deltaTime);
             }      
         }
     }

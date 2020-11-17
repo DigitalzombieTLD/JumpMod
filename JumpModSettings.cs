@@ -20,14 +20,8 @@ namespace JumpMod
         [Choice("Space", "Alt", "Ctrl", "Shift", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "T", "U", "V", "X", "Y", "Z", "Insert", "Home", "End", "PageUp", "PageDown", "Pause", "Clear", "B", "C", "F", "G")]
         public int buttonJump = 0;        
 
-        protected override void OnChange(FieldInfo field, object oldValue, object newValue)
-        {
-
-        }
         protected override void OnConfirm()
         {
-            
-
             base.OnConfirm();
         }
     }
